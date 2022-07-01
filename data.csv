@@ -1,0 +1,20 @@
+name,age,salary
+Robert,45,20000
+Ro,45,2000
+qwertyuiopasdfghjklzxcvbnmqwertyuiopasdfg,45,20000
+    Robert,45,20000
+Robert    ,45,20000
+,45,20000
+Robert,,20000
+Robert,17,20000
+Robert,121,20000
+Robert,abc,20000
+Robert,17.5,20000
+Robert, *?/\|<>,.()[]{};:'"!@#$%^&
+Robert,45,
+Robert,45,0
+Robert,45,1000001
+Robert,45,abc
+Robert,45, *?/\|<>,.()[]{};:'"!@#$%^&
+Robert,45,100000.22
+
