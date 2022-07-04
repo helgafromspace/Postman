@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "a1e9096f-7871-4f49-a9c3-767fc8c1f246",
-		"name": "Anatoly HW",
+		"name": "Anatoly HW saved",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "18802411"
 	},
@@ -29,7 +29,7 @@
 									"\r",
 									"function checkData(obj){\r",
 									"\r",
-									"    if((obj.name.length >= 3  && obj.name.length <= 40 && !obj.name.includes(' ') && obj.name !== '' && typeof(obj.name) === 'string')&&(req_age >=18 && req_age <= 120 && req_age !== '' && typeof (req_age) !== 'string' && !String(req_age).includes(` *?/\\|<>,.()[]{};:'\"!@#$%^&`) && Number.isInteger(req_age))&&(req_salary >= 1 && req_salary <= 1000000 && req_salary !== '' && typeof(req_salary) !=='string' && !String(req_salary).includes(` *?/\\|<>,.()[]{};:'\"!@#$%^&`) && Number.isInteger(req_salary))){\r",
+									"    if ((obj.name.length >= 3 && obj.name.length <= 40 && (!obj.name.match(/^\\s+|\\s+$/g)|| obj.name.match(/\\w+\\s+\\w*/g)) && obj.name !== '' && typeof (obj.name) === 'string') && (req_age >= 18 && req_age <= 120 && obj.age == parseInt(obj.age) && obj.age != '' && Number.isInteger(req_age)) && (req_salary >= 1 && req_salary <= 1000000 && obj.salary == parseInt(obj.salary) && obj.salary != '' && Number.isInteger(req_salary))){\r",
 									"\r",
 									"        pm.test(\"Status code is 200\", function () {\r",
 									"            pm.response.to.have.status(200);\r",
@@ -1329,7 +1329,8 @@
 							"    pm.test(result, function () {\r",
 							"    pm.expect(Number(res_salary[i])).to.eql(req_arr[i]);\r",
 							"});\r",
-							"}"
+							"}\r",
+							""
 						],
 						"type": "text/javascript"
 					}
@@ -1368,12 +1369,13 @@
 					"listen": "test",
 					"script": {
 						"exec": [
+							"/*Преобразовать задания 5-7 (сравнить идентичные поля в реквесте и респонсе) таким образом, чтобы это делалось ЗА ОДИН ТЕСТ (сразу все 3 поля) БЕЗ ЦИКЛОВ! (глубокое сравнение объектов)*/\r",
 							"\r",
 							"let jsonData = pm.response.json()\r",
 							"let req = pm.request.url.query.toObject();\r",
 							"\r",
-							"\r",
 							"pm.test(\"Response values equal to request values\", function () {\r",
+							"\r",
 							"    pm.expect(jsonData.name).to.eql(req.name);\r",
 							"    pm.expect(jsonData.age).to.eql(req.age);\r",
 							"    pm.expect(jsonData.salary).to.eql(Number(req.salary));\r",
