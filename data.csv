@@ -1,20 +1,31 @@
 name,age,salary
-Robert,45,20000
+Rob,18,1
+My Ro "!@#$%^bert, 120, 1000000
 Ro,45,2000
 qwertyuiopasdfghjklzxcvbnmqwertyuiopasdfg,45,20000
     Robert,45,20000
-Robert    ,45,20000
+Robert     ,45,20000
 ,45,20000
+    ,45,20000
+<script>alert('Hey')</script>,18,1
+<input>name</input>,18,1
 Robert,,20000
 Robert,17,20000
 Robert,121,20000
-Robert,abc,20000
+Robert,abc *?/\|<>.()[]{};:'"!@#$%^&,20000
 Robert,17.5,20000
-Robert, *?/\|<>,.()[]{};:'"!@#$%^&
+Robert,-18,20000
+Robert,true,20000
+Robert,'18',20000
+Robert,1e10,20000
+Robert,0,20000
 Robert,45,
 Robert,45,0
 Robert,45,1000001
-Robert,45,abc
-Robert,45, *?/\|<>,.()[]{};:'"!@#$%^&
+Robert,45,abc ()[]{};:'"!@#$%^&
 Robert,45,100000.22
+Robert,45,true
+Robert,45, -2000
+Robert,45,'2000'
+
 
